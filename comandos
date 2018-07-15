@@ -1,0 +1,23 @@
+
+
+Tutorial install minikube+kvm
+https://fedoramagazine.org/minikube-kubernetes/
+
+Deploy
+wget --http-user=admin --http-password=admin "192.168.39.162:31277/manager/text/deploy?war=URL:https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war&path=/sample" -O -
+wget --http-user=admin --http-password=admin "192.168.39.162:31277/manager/text/deploy?path=/sample&war=file:/tmp/sample" -O -
+
+curl --upload-file /tmp/sample.war "http://admin:admin@192.168.39.162:31277/manager/deploy?path=/sample&update=true"
+
+
+
+Funcionou-Deploy
+curl -T "sample.war" "http://admin:admin@192.168.39.162:31277/manager/text/deploy?path=/sample&update=true"
+curl -T "sample.war" "http://admin:admin@192.168.39.162:31277/manager/text/deploy?path=/&update=true"
+
+Funcionou-Undeploy
+
+curl "http://admin:admin@192.168.39.162:31277/manager/text/undeploy?path=/sample&update=true"
+curl "http://admin:admin@192.168.39.162:31277/manager/text/undeploy?path=/&update=true"
+
+wget --http-user=admin --http-password=admin "192.168.39.162:31277/manager/text/undeploy?path=/sample" -O -
