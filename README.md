@@ -74,6 +74,7 @@ node {
         sh "curl -T '/tmp/sample.war' 'http://${USER}:${PASSWORD}@${IP}:${PORT}/manager/text/deploy?path=/&update=true'"
         // sh "curl -T '/tmp/sample.war' 'http://${USER}:${PASSWORD}@${IP}:${PORT}/manager/text/deploy?path=/sample&update=true'"
     }
-}```
+}
+```
 
 Save e execute o Job clicando em `Build Now` para fazer o deploy da aplicação `sample.war`
