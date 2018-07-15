@@ -21,3 +21,29 @@ curl "http://admin:admin@192.168.39.162:31277/manager/text/undeploy?path=/sample
 curl "http://admin:admin@192.168.39.162:31277/manager/text/undeploy?path=/&update=true"
 
 wget --http-user=admin --http-password=admin "192.168.39.162:31277/manager/text/undeploy?path=/sample" -O -
+
+
+
+
+
+Test-Deploy
+
+node {
+    stage('Download War'){
+        sh "wget https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war -O /tmp/sample.war"
+    }
+    stage('Deploy war'){
+        sh 'curl -T "/tmp/sample.war" "http://admin:admin@192.168.39.162:31277/manager/text/deploy?path=/&update=true"'
+        // sh 'curl -T "/tmp/sample.war" "http://admin:admin@192.168.39.162:31277/manager/text/deploy?path=/sample&update=true"'
+    }
+}
+
+
+Test-Undeploy
+
+node {
+    stage('Undeploy war'){
+        sh 'curl "http://admin:admin@192.168.39.162:31277/manager/text/undeploy?path=/&update=true"'
+        // sh 'curl "http://admin:admin@192.168.39.162:31277/manager/text/undeploy?path=/sample&update=true"'
+    }
+}
