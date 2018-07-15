@@ -115,6 +115,7 @@ RUN set -eux; \
 	apt-get install -y --no-install-recommends \
 		dpkg-dev \
 		gcc \
+		vim \
 		wget \
 		libapr1-dev \
 		libssl-dev \
@@ -158,11 +159,20 @@ RUN set -e \
 		exit 1; \
 	fi
 
-ADD https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war /usr/local/tomcat/webapps/
+# ADD https://tomcat.apache.org/tomcat-8.0-doc/appdev/sample/sample.war /usr/local/tomcat/webapps/
 
 # RUN ls -la && mv ./sample.waf /usr/local/tomcat/webapps/
-# COPY sample.war /usr/local/tomcat/webapps/sample.war
-# RUN rm -rf /usr/local/tomcat/webapps/*
+RUN rm -f /usr/local/tomcat/conf/tomcat-users.xml
+
+RUN rm -f /usr/local/tomcat/conf/context.xml
+
+RUN rm -f /usr/local/tomcat/webapps/manager/META-INF/context.xml
+
+COPY tomcat-users.xml /usr/local/tomcat/conf
+
+COPY context.xml /usr/local/tomcat/conf
+
+COPY web/context.xml /usr/local/tomcat/webapps/manager/META-INF
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
