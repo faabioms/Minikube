@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: tomcat8
+  name: nginx
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
-        app: tomcat8
+        app: nginx
     spec:
       containers:
-        - name: tomcat8
-          image: tomcat:8.5.32-jre10
+        - name: nginx
+          image: wsvblack/nginx
           ports:
             - containerPort: 80

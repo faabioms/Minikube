@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: tomcat8
+  name: jenkins
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: tomcat8
+        app: jenkins
     spec:
       containers:
-        - name: tomcat8
-          image: tomcat:8.5.32-jre10
+        - name: jenkins
+          image: jenkins
           ports:
             - containerPort: 80
