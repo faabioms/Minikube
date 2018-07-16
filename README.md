@@ -15,21 +15,21 @@ para exibir seu ip.<br />
 
 Baixe e descompacte o repositório https://github.com/wsvblack/Minikube/archive/master.zip, depois de descompactado acesse a pasta para instalar as aplicações.<br />
 
-Acesse a pasta Nginx e crie a aplicação utilizando o comando:<br />
+Crie a aplicação Nginx utilizando o comando:<br />
 `kubectl create -f nginx/nginx-svc.yml && kubectl create -f nginx/nginx-deploy.yml`<br />
 
 Após a criação da aplicação execute o comando:<br />
 `minikube service nginx-svc --url`<br />
 para visualizar o IP da aplicação com a porta.<br />
 
-Acesse a pasta Tomcat e crie a aplicação utilizando o comando:<br />
+Crie a aplicação Tomcat utilizando o comando:<br />
 `kubectl create -f tomcat/tomcat-svc.yml && kubectl create -f tomcat/tomcat-deploy.yml`<br />
 
 Após a criação da aplicação execute o comando:<br />
 `minikube service tomcat-svc --url`<br />
 para visualizar o IP da aplicação com a porta.<br />
 
-Acesse a pasta Jenkins e crie a aplicação utilizando o comando:<br />
+Crie a aplicação Jenkins utilizando o comando:<br />
 `kubectl create -f jenkins/jenkins-svc.yml && kubectl create -f jenkins/jenkins-deploy.yml`<br />
 
 Após a criação da aplicação execute o comando:<br />
