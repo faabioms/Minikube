@@ -62,7 +62,7 @@ Após adicionar o código no campo e clicar em continuar clique em `Install Sugg
 Após o término da instalação preencha com usuário, senha e e-mail do administrador, clique em `Save and Finish` e depois `Start using Jenkins`.<br />
 Crie um novo Job clicando em `create new jobs`, dê um nome para o Job, selecione Pipeline e clique em OK.<br />
 Dentro da configuração do Job em `Pipeline` copie o código a seguir alterando a variável `IP` e `PORT` da aplicação Tomcat.<br />
-```
+```groovy
 def USER="admin"
 def PASSWORD="admin"
 def IP=""
