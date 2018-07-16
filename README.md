@@ -1,7 +1,7 @@
 # Minikube
 
 Instale o Minikube<br />
-https://kubernetes.io/docs/tasks/tools/install-minikube/<br />
+https://kubernetes.io/docs/tasks/tools/install-minikube/ <br />
 
 Inicie um novo cluster com os comandos:<br />
 `minikube start` ou `minikube start --vm-driver kvm2`<br />
@@ -75,7 +75,6 @@ node {
     }
     stage('Deploy war'){
         sh "curl -T '/tmp/sample.war' 'http://${USER}:${PASSWORD}@${IP}:${PORT}/manager/text/deploy?path=/&update=true'"
-        // sh "curl -T '/tmp/sample.war' 'http://${USER}:${PASSWORD}@${IP}:${PORT}/manager/text/deploy?path=/sample&update=true'"
     }
 }
 ```
