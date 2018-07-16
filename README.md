@@ -1,6 +1,7 @@
 # Minikube
 
-Instalar o Minikube<br />
+Instale o Minikube<br />
+https://kubernetes.io/docs/tasks/tools/install-minikube/<br />
 
 Inicie um novo cluster com os comandos:<br />
 `minikube start` ou `minikube start --vm-driver kvm2`<br />
